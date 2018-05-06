@@ -1,0 +1,473 @@
+
+  /*style for the timeline */
+  .slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+  </style>
+  <style>
+    *,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.new {
+font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+background:#D3D3D3 ;
+color: #fff;
+overflow-x: hidden;
+padding-bottom: 50px;
+}  /* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+background: white;
+padding: 50px 0;
+}
+
+.timeline ul li {
+list-style-type: none;
+position: relative;
+width: 6px;
+margin: 0 auto;
+padding-top: 50px;
+background:#666666;
+}
+
+.timeline ul li::after {
+content: '';
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 30px;
+height: 30px;
+border-radius: 20%;
+background: green;
+}
+
+.timeline ul li div {
+position: relative;
+bottom: 0;
+width: 400px;
+padding: 15px;
+background: #e5f2fb;
+}
+
+.timeline ul li div::before {
+content: '';
+position: absolute;
+bottom: 7px;
+width: 0;
+height: 0;
+border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+left: -15px;
+border-width: 8px 16px 8px 0;
+border-color: transparent #e5f2fb transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+right: -15px;
+border-width: 8px 0 8px 16px;
+border-color: transparent transparent transparent #e5f2fb;
+}
+
+time {
+display: block;
+font-size: 1.2rem;
+font-weight: bold;
+margin-bottom: 8px;
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+background: #e5f2fb;
+}
+
+.timeline ul li div {
+visibility: hidden;
+opacity: 0;
+transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+transform: none;
+visibility: visible;
+opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+.timeline ul li div {
+width: 250px;
+}
+.timeline ul li:nth-child(even) div {
+left: -289px;
+/*250+45-6*/
+}
+}
+
+@media screen and (max-width: 600px) {
+.timeline ul li {
+margin-left: 20px;
+}
+.timeline ul li div {
+width: calc(100vw - 91px);
+}
+.timeline ul li:nth-child(even) div {
+left: 45px;
+}
+.timeline ul li:nth-child(even) div::before {
+left: -15px;
+border-width: 8px 16px 8px 0;
+border-color: transparent #e5f2fb transparent transparent;
+}
+}
+   
+    #work-section h2 {
+padding-bottom: 2em;
+}
+.work-info h4 {
+margin-bottom: 15px;
+font-family: 'Oswald', sans-serif;
+}
+
+.technologies-used {
+display: inline-block;
+}
+
+
+.work-buttons {
+padding-top: 8px;
+}
+
+.work-buttons .btn {
+border-radius: 24px;
+padding: 4px 20px;
+display: inline-block;
+}
+.work-buttons i {
+padding-right: 5px;
+}
+
+/* Hover.css for custom :hover states on buttons in work section */
+.work-buttons button {
+background: none;
+color: black;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+height: 30px;
+width: 100px;
+/*   line-height: 30px; */
+/*   margin: 10px; */
+text-align: center;
+border: 1px solid #697082;
+border-radius: 24px;
+display: inline-block;
+overflow: hidden;
+}
+.work-buttons button:hover{
+background-color: #697082;
+color: white;
+transition-duration: .3s;
+text-decoration: none;
+}
+
+
+@keyframes hvr-icon-pop {
+50% {
+-webkit-transform: scale(1.5);
+transform: scale(1.5);
+}
+}
+.hvr-icon-pop {
+display: inline-block;
+vertical-align: middle;
+-webkit-transform: perspective(1px) translateZ(0);
+transform: perspective(1px) translateZ(0);
+box-shadow: 0 0 1px transparent;
+position: relative;
+padding-right: 2.2em;
+-webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+}
+.hvr-icon-pop:before {
+content: "\f1cb";
+position: absolute;
+right: 1.5em;
+padding: 0 1px;
+font-family: FontAwesome;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+-webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+-webkit-transition-property: transform;
+transition-property: transform;
+-webkit-transition-timing-function: ease-out;
+transition-timing-function: ease-out;
+}
+.github-button .hvr-icon-pop:before {
+content: "\f09b"
+}
+.hvr-icon-pop:hover:before, .hvr-icon-pop:focus:before, .hvr-icon-pop:active:before {
+-webkit-animation-name: hvr-icon-pop;
+animation-name: hvr-icon-pop;
+-webkit-animation-duration: 0.3s;
+animation-duration: 0.3s;
+-webkit-animation-timing-function: linear;
+animation-timing-function: linear;
+-webkit-animation-iteration-count: 1;
+animation-iteration-count: 1;
+}
+/* End hover.css button styling...that's a lot of code right there... */
+
+.row > hr {
+padding: 20px;
+margin-top: 40px;
+width: 70%;
+}
+
+/* --END WORK SECTION STYLING-- */
+
+
+/* --BEGIN CONTACT SECTION STYLING-- */
+.contact-container{
+margin-top: 4em;
+margin-bottom: 3em;
+}
+.contact-section {
+text-align: center;
+font-family: 'Roboto', sans-serif;
+}
+
+.email-button {
+padding: 30px;
+}
+.contact-button {
+position: relative;
+-webkit-perspective: 1000;
+-webkit-backface-visibility: hidden;
+-webkit-transform:translate3d(0,0,0);
+color: #697082;
+text-decoration: none;
+font-weight: 400;
+font-size: 1.2em;
+border: 2px solid #697082;
+border-radius: 4px;
+padding: 20px 65px;
+transition: 0.3s ease-in-out;
+
+}
+.contact-button > span {
+text-transform: none;
+position: absolute;
+color: white;
+top: 20px;
+left: 12px;
+opacity: 0;
+transition: all 0s ease 0s;
+}
+
+.contact-button:hover {
+transition: 0.3s ease-in-out;
+border: 2px solid #697082;
+border-radius: 50px;
+background-color: #697082;
+color: #697082;
+}
+.contact-button:hover > span {
+opacity: 1;
+transition: all 0.25s ease-in-out 0.1s;
+font-size: 14px;
+}
+.contact-button:before, contact-button:after {
+content: "";
+position: absolute;
+top: -14px;
+left: -12px;
+width: 132px;
+height: 25px;
+}
+
+/* Social buttons at bottom of apge - different from "contact button" */
+.contact-buttons {
+height: 60px;
+margin: auto;
+text-align: center;
+width: 60%;
+padding-top: 15px;
+
+}
+
+.social {
+display: inline-block;
+width: 45px;
+height: 45px;
+line-height: 45px;
+text-align: center;
+border: 1.5px solid #272628;
+border-radius: 28%;
+margin-right: 1em;
+}
+
+/* Specific colors for each button */
+.github-social {
+color: #272628;
+}
+.codepen-social {
+color: #272628;
+}
+.insta-social {
+color: #106E29;
+}
+.facebook-social {
+color: #55acee;
+}
+.linkedin-social {
+color: #007bb5;
+}
+.medium-social {
+color: #3cb371;
+}
+/* Change specific colors on :hover */
+.contact-buttons > a {
+transition: all .5s;
+}
+.contact-buttons > a:hover, .contact-buttons > a:focus {
+border: none;
+}
+.contact-buttons > a.github-social:hover, .contact-buttons > a.github-social:focus {
+color: white;
+background-color: #272628;
+}
+.contact-buttons > a.codepen-social:hover, .contact-buttons > a.codepen-social:focus {
+color: white;
+background-color: #272628;
+}
+.contact-buttons > a.insta-social:hover, .contact-buttons > a.insta-social:focus {
+color: white;
+background-color: #106E29;
+}
+.contact-buttons > a.facebook-social:hover, .contact-buttons > a.facebook-social:focus {
+color: white;
+background-color: #55acee;
+}
+.contact-buttons > a.linkedin-social:hover, .contact-buttons > a.linkedin-social:focus {
+color: white;
+background-color: #007bb5;
+}
+.contact-buttons > a.medium-social:hover, .contact-buttons > a.medium-social:focus {
+color: white;
+background-color: #3cb371;
+}
+  
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      background-color:white;
+      color: #222930;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: white; /* Green */
+      color: black;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+ 
